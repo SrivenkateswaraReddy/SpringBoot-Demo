@@ -1,0 +1,51 @@
+#managining actuator endpoints both include and exclude also base-path settings
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include:  beans, caches, conditions, env, flyway, health, httptrace , integrationgraph, loggers, liquibase, metrics, mappings, scheduletasks, sessions, shutdown, threaddump, info
+        exclude: auditevents, configprops
+  info:
+    env:
+      enabled: true
+    app:
+      name: "MY INFO APP"
+      description: "A Spring Boot application"
+      version: "1.0"
+# defining @value properties
+coach:
+  name: "Linux Profile"
+player:
+  name: "linus Torvalrds"
+
+# JDBC Settings
+#spring:
+#  datasource:
+#    url:
+#    username:
+#    password:
+
+
+# spring security settings unsername and password
+  spring:
+    security:
+      user:
+        name: "root"
+        password: "password"
+
+# Server configuration and configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /myapp
+  session:
+    timeout: 5m
+
+# Logging level settings
+logging:
+  level:
+    org.springframework: DEBUG
+    hibernate: TRACE
+    com.springboot.demo.mycoolapp: INFO
+  file: coolapp.log
