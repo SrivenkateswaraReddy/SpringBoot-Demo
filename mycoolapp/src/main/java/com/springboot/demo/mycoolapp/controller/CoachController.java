@@ -32,8 +32,10 @@ public class CoachController {
 // if @Qualifier annotation is not used, the by default @Primary annotation will be used.
 // CoachController(@Qualifier("footBallCoachImplementation") Coach myCoach)
     @Autowired
-    public CoachController(@Qualifier("footBallCoachImplementation") Coach myCoach) {
+    public CoachController(@Qualifier("footBallCoachImplementation") Coach myCoach,
+                           @Qualifier("footBallCoachImplementation") Coach myCoach2) {
         this.myCoach = myCoach;
+        this.myCoach2 = myCoach2;
     }
 // Setter injection
 // use setter injection when optional dependencies.
@@ -51,5 +53,10 @@ public class CoachController {
     @GetMapping(value = "/getCricketCoach")
     public String getTeam() {
         return cricketCoach.getTeam();
+    }
+
+    @GetMapping(value = "/getCoach")
+    public String getCoach() {
+        return "Both Coaches  Scopes " +  (myCoach==myCoach2);
     }
 }

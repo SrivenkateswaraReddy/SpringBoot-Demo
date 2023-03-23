@@ -1,10 +1,11 @@
 package com.springboot.demo.mycoolapp.InterfaceImplementation;
 
 import com.springboot.demo.mycoolapp.interfaces.Coach;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Primary
+//@Primary
+
+
 @Component
 public class CoachImplementation  implements Coach{
     @Override
