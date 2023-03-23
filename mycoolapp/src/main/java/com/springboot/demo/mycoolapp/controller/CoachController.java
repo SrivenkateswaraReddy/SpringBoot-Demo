@@ -21,7 +21,11 @@ public class CoachController {
 
     private Coach myCoach2;
 
+    private Coach myCoach3;
+
     private CricketCoach cricketCoach;
+
+
 
 
 //    constructor injection
@@ -31,12 +35,17 @@ public class CoachController {
 // if you don't want to use @Qualifier annotation. just specify @Primary over the @Component annotation. so that
 // if @Qualifier annotation is not used, the by default @Primary annotation will be used.
 // CoachController(@Qualifier("footBallCoachImplementation") Coach myCoach)
+
     @Autowired
     public CoachController(@Qualifier("footBallCoachImplementation") Coach myCoach,
-                           @Qualifier("footBallCoachImplementation") Coach myCoach2) {
+                           @Qualifier("footBallCoachImplementation") Coach myCoach2,
+                           @Qualifier("swimCoachImplementation") Coach myCoach3) {
         this.myCoach = myCoach;
         this.myCoach2 = myCoach2;
     }
+
+
+
 // Setter injection
 // use setter injection when optional dependencies.
     @Autowired
