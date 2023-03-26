@@ -42,6 +42,7 @@ public class CoachController {
                            @Qualifier("swimCoachImplementation") Coach myCoach3) {
         this.myCoach = myCoach;
         this.myCoach2 = myCoach2;
+        this.myCoach3 = myCoach3;
     }
 
 

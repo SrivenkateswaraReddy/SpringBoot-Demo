@@ -13,11 +13,11 @@ public class HomePage {
 
     Logger log = LoggerFactory.getLogger(HomePage.class);
 
-    @GetMapping("/")
-    public String sayHello() {
-        log.info(" from Hello World base page");
-        return "HelloWorld";
-    }
+//    @GetMapping("/")
+//    public String sayHello() {
+//        log.info(" from Hello World base page");
+//        return "HelloWorld";
+//    }
 
     // expose a new endpoint for workout
 
