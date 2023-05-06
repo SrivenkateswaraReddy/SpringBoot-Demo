@@ -2,6 +2,11 @@ pipeline:
   agent:
     any
   stages:
+    - stage: "Git checkout scm"
+      steps:
+        - git:
+            branch: main
+            url: ''
     - stage: "Build"
       steps:
         - sh "mvn clean install"
@@ -11,3 +16,4 @@ pipeline:
     - stage: "Deploy"
       steps:
         - sh "mvn deploy"
+`
