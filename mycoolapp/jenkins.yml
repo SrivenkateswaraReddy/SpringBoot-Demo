@@ -6,7 +6,7 @@ pipeline:
       steps:
         - git:
             branch: main
-            url: ''
+            url: 'https://github.com/SrivenkateswaraReddy/SpringBoot-Demo.git'
     - stage: "Build"
       steps:
         - sh "mvn clean install"
